@@ -1,0 +1,30 @@
+<div class="sidebar-container">
+  <div class="sidebar-header">Properties</div>
+  <div class="sidebar-content">
+    <ng-container *ngIf="selectedObject; else nothing;">
+      <div class="property-group">
+        <span class="group-label">General<mat-icon>lock</mat-icon></span>
+        <div class="group-content">
+          <label>ID (read-only)</label>
+          <input type="text" [(ngModel)]="selectedObject.id" disabled>
+          <label>TYPE NAME (read-only)</label>
+          <input type="text" [(ngModel)]="selectedObject.name" disabled>
+        </div>
+      </div>
+
+      <div class="property-group">
+        <span class="group-label">Customize</span>
+        <div class="group-content">
+          <ng-container *ngFor="let prop of properties">
+            <label class="uppercase-label">{{ prop }}</label>
+            <input type="text" [(ngModel)]="selectedObject[prop]">
+          </ng-container>
+          <button class="btn btn-property-save" (click)="saveProperty()">Save</button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #nothing>
+      <div class="no-selected">No item selected.</div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  padding: 0 5px;
+  #konvaboard {
+    margin-left: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    height: calc(100vh - 200px);
+    width: calc(100vw - 300px);
+    background-color: white;
+  }
+}
+
+.header {
+  background: #349c4d;
+  box-shadow: 1px 1px 6px grey;
+  margin-bottom: 10px;
+  display: flex;
+  padding: 6px;
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 0 20px;
+    color: white;
+  }
+  .btn-group {
+    .a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      mat-icon {
+        color: white;
+      }
+    }
+  }
+}
+
+.property-container {
+  right: 0;
+  width: 300px;
+  background-color: white;
+}

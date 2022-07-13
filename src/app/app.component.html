@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="logo">Konva</div>
+  <div class="button-group">
+    <mat-button-toggle-group #groupSelector="matButtonToggleGroup" (change)="pointer = +$event.value">
+      <mat-button-toggle value="1" checked="true">
+        <i class="fa fa-mouse-pointer"></i>
+      </mat-button-toggle>
+      <mat-button-toggle value="2">
+        <i class="fa fa-magic"></i>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <button mat-icon-button (click)="join(linkBtnStatus.link)" [disabled]="!linkBtnStatus.enable">
+      <i [ngClass]="!linkBtnStatus.link ? 'fa fa-link' : 'fa fa-unlink'"></i>
+    </button>
+  </div>
+</div>
+<div class="main">
+  <div id="konvaboard"></div>
+  <app-sidebar></app-sidebar>
+</div>
